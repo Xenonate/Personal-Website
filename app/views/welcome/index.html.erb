@@ -1,0 +1,24 @@
+<div class="container">
+<div id="top-nav">
+      <% if current_user %>
+        Signed in as <strong><%= current_user.name %></strong>!
+        <%= link_to "Sign out", signout_path, id: "sign_out" %>
+      <% else %>
+        <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %>
+      <% end %>
+</div>
+<div id="img-div">
+  <%= image_tag "googlelogo.png", :class => "logo-image" %>
+</div>
+<br>
+
+<%= form_for :welcome, :html => { :id => "search-form"} do |f| %>
+    <%= f.text_field :search, class: "input-field" %>
+    <br>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<div id="bot-nav">BOT BAR</div>
+</div>
+
